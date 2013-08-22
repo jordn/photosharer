@@ -52,15 +52,19 @@
     <img src="{{url}}"/>
     <div class="photo_info">
 
-         <!-- if photo is unrated -->
+         <!-- if photo is rated, display your vote and total number of votes -->
+         {{#if vote}}
+            <p class="no_of_shares">256 | like</p>
+            <p class="you_like_or_dislike"></p>
+          {{else}}
+        <!-- else display voting buttons -->
         <div class="photo_controls">
            <button type="button" class="like">Like
            </button>
            <button type="button" class="dislike">Dislike
            </button>
-
         </div>
-          <!-- else -->
+        {{/if}}
     </div>
   </div>
 
