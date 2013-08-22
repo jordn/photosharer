@@ -1,7 +1,7 @@
 /* CSS declarations go here */
 
 body {
-  background-image:url('./img/dimension.png');
+  background-image:url('dimension.png');
   background-repeat:repeat;
 }
 
@@ -119,14 +119,13 @@ margin-top: 50px;
   margin: 0px;
   padding: 0px;
   height:60px;
-
-
-  border-width: 2px;
-  border-color: red;
-  border-style: solid;
-
 }
 
+
+#filepicker {
+  width:100%;
+  padding:20px;
+}
 
 .photos_container {
   margin: 0px;
