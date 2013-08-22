@@ -3,6 +3,7 @@
 </head>
 
 <body>
+
   {{> app}}
 </body>
 
@@ -15,15 +16,34 @@
 <template name="app">
   {{> login}}
   <br><br>
-  <button>Take Photo</button>
-  {{greeting}}
+  <div class="centre_container">
+    <div class="upload_button_container"> 
+      <button>Take Photo</button>
+    </div>
 
-  {{> photos}}
+    <div class="photos_container">
+      {{> photos}}
+    </div>  
+  </div>
 </template>
 
 <template name="photos">
   {{#each photos}}
-  <br>
-  <img src="{{url}}">
+  <div class="photo_box" style="background-image:url("{{url}}");">
+
+    <div class="photo_info">
+
+         <!-- if photo is unrated -->
+        <div class="photo_controls">
+           <button type="button" class="like">Like
+           </button>
+           <button type="button" class="dislike">Dislike
+           </button>
+
+        </div>
+          <!-- else -->
+    </div>
+  </div>
+
   {{/each}}
 </template>
