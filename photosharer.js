@@ -39,7 +39,7 @@ if (Meteor.isClient) {
         for (var i = photos.length - 1; i >= 0; i--) {
           photoId = photos[i].photoId;
           photo = Photos.findOne({_id: photoId});
-          display.push({url: photo.url});
+          display.push({url: photo.url, vote: photos[i].vote});
         };
         console.log(display);
         return display;
