@@ -5,12 +5,16 @@
 <body>
   {{> login}}
   {{> hello}}
+  {{> photo_page}}
 </body>
 
 
 <template name="login">
-  <h1>Login/Register!</h1>
-  <div>{{loginButtons}}</div>
+	{{#if logged_in}}
+	{{else}}
+  		<h1>Login/Register!</h1>
+  		<div>{{loginButtons}}</div>
+  	{{/if}}
 </template>
 
 
@@ -18,4 +22,28 @@
   <br><br>
   <input type="filepicker" id="attachment">
   {{greeting}}
+</template>
+
+
+<template name="photo_page">
+	<div class="centre_container">
+		<input type="filepicker" id="attachment">
+		<h1>heres some stuff</h1>
+		<div class="photos_container">
+			{{#each photo_url}}
+				{{> photo}}
+			{{/each}}
+		</div>
+	</div>
+
+</template>
+
+<template name="photo">
+	<div class="photo_box">
+		<img href={{image_url}}>
+		<div class="photo_controls">
+			
+		</div>
+
+	</div>
 </template>
