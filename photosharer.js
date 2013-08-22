@@ -2,14 +2,6 @@ Photos = new Meteor.Collection('photos');
 Timeline = new Meteor.Collection('timeline')
 
 if (Meteor.isClient) {
-  Session.set("widgetSet", false);
-  var key = "A8AiITlRQgy5paB0vuHf2z";
-
-  Template.app.rendered = function ( ) { 
-    if (!Session.get("widgetSet")) {  
-      loadPicker(key);
-    }
-  };
 
   Template.app.events({
     'click button' : function () {
