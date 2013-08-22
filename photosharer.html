@@ -18,4 +18,13 @@
   <br><br>
   <input type="filepicker" id="attachment">
   {{greeting}}
+
+  {{> photos}}
 </template>
+
+<template name="photos">
+  {{#each photos}}
+  <img src="{{url}}">
+  {{/each}}
+</template>
+

@@ -35,6 +35,24 @@ if (Meteor.isClient) {
     }
   });
 
+  Template.photos.photos = function () {
+    if (Meteor.user()) {
+      console.log('rendering photos');
+      var userId = Meteor.userId();
+      timeline = Timeline.findOne({userId: userId});
+      photos = timeline.photos;
+      display = []
+      for (var i = photos.length - 1; i >= 0; i--) {
+        photoId = photos[i].photoId;
+        photo = Photos.findOne({_id: photoId});
+        display.push({url: photo.url});
+      };
+      console.log(display);
+      return display;
+    }
+
+  }
+
 
   function savePhoto (url) {
     if (Meteor.user()) {
@@ -60,7 +78,9 @@ if (Meteor.isClient) {
       }
       var date_received = Date.now();
       var vote = ""
-      Timeline.insert({userId: userId, photoId: photoId, date_received: date_received, vote: vote});
+      photos = timeline.photos;
+      photos.push({photoId: photoId, date_received: date_received, vote: vote});
+      Timeline.update({_id: timeline._id}, {userId: userId, photos: photos});
       return true;
     }
   }
