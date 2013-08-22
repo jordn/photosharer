@@ -3,7 +3,11 @@
 </head>
 
 <body>
-  {{> app}}
+  {{#if currentUser}}
+    {{> app}}
+  {{else}}
+    {{> login}}
+  {{/if}}
 </body>
 
 
@@ -13,11 +17,9 @@
 </template>
 
 <template name="app">
-  {{> login}}
-  <br><br>
+  {{loginButtons}}<br><br>
   <button>Take Photo</button>
   {{greeting}}
-
   {{> photos}}
 </template>
 
