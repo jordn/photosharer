@@ -31,18 +31,21 @@
 </template>
 
 <template name="app">
-  {{loginButtons}}
-  <br><br>
-  <div class="centre_container">
-    <div class="upload_button_container"> 
-      <button id="filepicker">Take Photo</button>
+  <div class="row">
+    <div class="small-12 small-centered columns text-center">
+      {{loginButtons}}
+      <br><br>
+      <div class="centre_container">
+        <div class="upload_button_container"> 
+          <button id="filepicker">Take Photo</button>
+        </div>
+
+        <div class="photos_container">
+          {{> photos}}
+        </div>  
+      </div>
     </div>
-
-    <div class="photos_container">
-      {{> photos}}
-    </div>  
   </div>
-
 </template>
 
 <template name="photos">
