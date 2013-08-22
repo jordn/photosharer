@@ -3,19 +3,14 @@
 </head>
 
 <body>
-
   {{> app}}
 </body>
 
 
 <template name="login">
-	{{#if logged_in}}
-	{{else}}
-  		<h1>Login/Register!</h1>
-  		<div>{{loginButtons}}</div>
-  	{{/if}}
+	<h1>Login/Register!</h1>
+	<div>{{loginButtons}}</div>
 </template>
-
 
 <template name="app">
   {{> login}}
@@ -28,6 +23,7 @@
 
 <template name="photos">
   {{#each photos}}
+  <br>
   <img src="{{url}}">
   {{/each}}
 </template>
