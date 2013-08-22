@@ -3,8 +3,7 @@
 </head>
 
 <body>
-  {{> login}}
-  {{> hello}}
+  {{> app}}
 </body>
 
 
@@ -14,7 +13,8 @@
 </template>
 
 
-<template name="hello">
+<template name="app">
+  {{> login}}
   <br><br>
   <input type="filepicker" id="attachment">
   {{greeting}}
