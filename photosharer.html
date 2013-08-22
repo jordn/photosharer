@@ -5,11 +5,18 @@
 <body>
 
   <div class="container">
-    {{#if currentUser}}
-      {{> app}}
-    {{else}}
-      {{> login}}
-    {{/if}}
+    <div class="row">
+      <div class="small-10 small-offset-1 columns ">
+        <h1>Photosharer</h1>
+        <h3 class="subheader">
+          Upload a photo, if it's good it will be shared with two more</h3>
+        {{#if currentUser}}
+          {{> app}}
+        {{else}}
+          {{> login}}
+        {{/if}}
+      </div>
+    </div>
   </div>
 </body>
 
@@ -24,11 +31,11 @@
 </template>
 
 <template name="app">
-  {{> login}}
+  {{loginButtons}}
   <br><br>
   <div class="centre_container">
     <div class="upload_button_container"> 
-      <button>Take Photo</button>
+      <button id="filepicker">Take Photo</button>
     </div>
 
     <div class="photos_container">
@@ -40,8 +47,9 @@
 
 <template name="photos">
   {{#each photos}}
-  <div class="photo_box" style="background-image:url("{{url}}");">
 
+  <div class="photo_box">
+    <img src="{{url}}"/>
     <div class="photo_info">
 
          <!-- if photo is unrated -->

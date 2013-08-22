@@ -4,7 +4,7 @@ Timeline = new Meteor.Collection('timeline')
 if (Meteor.isClient) {
 
   Template.app.events({
-    'click button' : function () {
+    'click #filepicker' : function () {
       if (typeof console !== 'undefined')
         console.log("You pressed the button");
       filepicker.pickAndStore({
