@@ -1,0 +1,21 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "foundation": {},
+      "loadpicker": {}
+    },
+    "packages": {
+      "foundation": {
+        "git": "https://github.com/ewall/meteor-foundation.git",
+        "tag": "v4.3.1",
+        "commit": "ecc55cd1ae470c902e010e5986a26c66e810d989"
+      },
+      "loadpicker": {
+        "git": "https://github.com/guido4000/loadpicker.git",
+        "tag": "v1.0.0",
+        "commit": "9f8aa83427b21e2d6279db3f018900bf09560352"
+      }
+    }
+  }
+}

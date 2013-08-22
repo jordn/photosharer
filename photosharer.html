@@ -1,0 +1,21 @@
+<head>
+  <title>photosharer</title>
+</head>
+
+<body>
+  {{> login}}
+  {{> hello}}
+</body>
+
+
+<template name="login">
+  <h1>Login/Register!</h1>
+  <div>{{loginButtons}}</div>
+</template>
+
+
+<template name="hello">
+  <br><br>
+  <input type="filepicker" id="attachment">
+  {{greeting}}
+</template>
