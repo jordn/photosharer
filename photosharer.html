@@ -24,15 +24,37 @@
 </template>
 
 <template name="app">
-  {{loginButtons}}<br><br>
-  <button>Take Photo</button>
-  {{greeting}}
-  {{> photos}}
+  {{> login}}
+  <br><br>
+  <div class="centre_container">
+    <div class="upload_button_container"> 
+      <button>Take Photo</button>
+    </div>
+
+    <div class="photos_container">
+      {{> photos}}
+    </div>  
+  </div>
+
 </template>
 
 <template name="photos">
   {{#each photos}}
-  <br>
-  <img src="{{url}}">
+  <div class="photo_box" style="background-image:url("{{url}}");">
+
+    <div class="photo_info">
+
+         <!-- if photo is unrated -->
+        <div class="photo_controls">
+           <button type="button" class="like">Like
+           </button>
+           <button type="button" class="dislike">Dislike
+           </button>
+
+        </div>
+          <!-- else -->
+    </div>
+  </div>
+
   {{/each}}
 </template>
