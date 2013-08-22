@@ -3,9 +3,8 @@
 </head>
 
 <body>
-  {{> login}}
-  {{> hello}}
-  {{> photo_page}}
+
+  {{> app}}
 </body>
 
 
@@ -18,32 +17,17 @@
 </template>
 
 
-<template name="hello">
+<template name="app">
+  {{> login}}
   <br><br>
   <input type="filepicker" id="attachment">
   {{greeting}}
+
+  {{> photos}}
 </template>
 
-
-<template name="photo_page">
-	<div class="centre_container">
-		<input type="filepicker" id="attachment">
-		<h1>heres some stuff</h1>
-		<div class="photos_container">
-			{{#each photo_url}}
-				{{> photo}}
-			{{/each}}
-		</div>
-	</div>
-
-</template>
-
-<template name="photo">
-	<div class="photo_box">
-		<img href={{image_url}}>
-		<div class="photo_controls">
-			
-		</div>
-
-	</div>
+<template name="photos">
+  {{#each photos}}
+  <img src="{{url}}">
+  {{/each}}
 </template>
